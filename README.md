@@ -3,7 +3,7 @@
 * [English](#eng)
 
 ## <a name="rus"></a> Описание по-русски.
-Пакет DJANGORESCUE позволяет обслуживать статику (static, media) через Django (когда нет возможности использовать nginx, apache, и s3 storage) при отключенном DEBUG-режиме.
+Пакет DJANGORESCUE позволяет обслуживать статику (static, media) через Django (когда нет возможности использовать nginx, apache, и s3 storage), независимо от состояния параметра DEBUG. 
 
 Да, это известно, что так делать не следует, но иногда по-другому нельзя.
 
@@ -16,7 +16,7 @@ DEBUG = False
 ...
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    ...
     'djangorescue.middleware.StaticMediaMiddleware',
 	...
 ]
@@ -32,7 +32,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 ## <a name="eng"></a> English description.
-DJANGORESCUE package allows to serve static files (static, media) through Django (when nginx, apachage and s3 storage options are not available) when DEBUG-mode is turned off.
+DJANGORESCUE package allows to serve static files (static, media) through Django (when nginx, apachage and s3 storage options are not available) regardless of DEBUG setting value.
 
 Yes, it is a known thing, that such approach is bad, however sometimes it's the only way.
 
@@ -45,7 +45,7 @@ DEBUG = False
 ...
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    ...
     'djangorescue.middleware.StaticMediaMiddleware',
 	...
 ]
