@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='djangorescue',
-    version='0.0.1',
+    version='0.0.4',
     author='Iakov Gnusin',
     author_email='y.gnusin@gmail.com',
     description='Package to let you serve static and media files via Django pipeline with DEBUG = False.',

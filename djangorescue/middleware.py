@@ -28,6 +28,10 @@ class StaticMediaMiddleware:
         if '..' in requested_file:
             return HttpResponseNotFound()
 
+        top_level_static_file_path = os.path.join(settings.BASE_DIR, self.__static_app_dir, requested_file)
+        if os.path.isfile(top_level_static_file_path):
+            return FileResponse(open(top_level_static_file_path, 'rb'))
+
         app_configs = apps.get_app_configs()
         for app_config in app_configs:
             app_path = app_config.path

@@ -25,6 +25,9 @@ MIDDLEWARE = [
 
 STATIC_URL = '/static/'
 STATIC_APP_DIR = 'static' # Имя каталога со статикой внутри каталога приложения.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -54,6 +57,9 @@ MIDDLEWARE = [
 
 STATIC_URL = '/static/'
 STATIC_APP_DIR = 'static' # The name of the folder, that contains static files within the app folder.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
